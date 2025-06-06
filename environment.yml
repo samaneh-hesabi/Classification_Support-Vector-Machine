@@ -1,0 +1,13 @@
+name: svm_classification
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.8
+  - numpy
+  - matplotlib
+  - scikit-learn
+  - seaborn
+  - pip
+  - pip:
+    - jupyter

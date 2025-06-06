@@ -14,7 +14,6 @@ This project demonstrates a Support Vector Machine (SVM) classification using th
   - Evaluates model performance using multiple metrics
   - Visualizes results with confusion matrix and ROC curve
 - `project_answers.md`: Documentation of project findings and analysis
-- `aaa.ipynb`: Jupyter notebook for interactive analysis (currently empty)
 - `environment.yml`: Conda environment configuration file
 - `requirements.txt`: Python package dependencies
 

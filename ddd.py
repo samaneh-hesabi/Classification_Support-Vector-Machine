@@ -26,6 +26,11 @@ svm_model.fit(X_train, y_train)
 
 # Make predictions
 y_pred = svm_model.predict(X_test)
+
+# Print the full probability array
+#print(svm_model.predict_proba(X_test))
+
+# Then extract just the positive class probabilities
 y_prob = svm_model.predict_proba(X_test)[:, 1]
 
 # Calculate accuracy
@@ -53,14 +58,13 @@ plt.yticks([0.5, 1.5], ['Malignant', 'Benign'])
 plt.subplot(1, 2, 2)
 fpr, tpr, _ = roc_curve(y_test, y_prob)
 roc_auc = auc(fpr, tpr)
-plt.plot(fpr, tpr, color='darkorange', lw=2, label=f'ROC curve (AUC = {roc_auc:.2f})')
-plt.plot([0, 1], [0, 1], color='navy', lw=2, linestyle='--')
-plt.xlim([0.0, 1.0])
-plt.ylim([0.0, 1.05])
+plt.plot(fpr, tpr, 'darkorange', label=f'AUC = {roc_auc:.2f}')
+plt.plot([0, 1], [0, 1], '--', color='navy')
+plt.axis([0, 1, 0, 1.05])
 plt.xlabel('False Positive Rate')
 plt.ylabel('True Positive Rate')
-plt.title('Receiver Operating Characteristic (ROC) Curve')
-plt.legend(loc="lower right")
+plt.title('ROC Curve')
+plt.legend()
 
 # Adjust layout and show plots
 plt.tight_layout()
